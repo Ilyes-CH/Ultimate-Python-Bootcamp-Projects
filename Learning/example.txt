@@ -1,0 +1,4 @@
+<|{variable}|web_component|options|>
+<|{name}|input|label=Your Name|>
+
+<|Click me!|button|on_action=greet|>

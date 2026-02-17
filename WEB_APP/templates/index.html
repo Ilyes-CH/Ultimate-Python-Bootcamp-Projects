@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title%}Home{% endblock %}
+
+{% block content %}
+    <h1>Welcome To The Blog</h1>
+
+<p>This is the home page. All the blogs written by sign up users will be listed down here</p>
+
+<h2>Recent Posts</h2>
+
+{% if posts %}
+
+{% for post in posts %}
+
+<div>
+    <h3>Post #{{post.id}} by {{post.author}}</h3>
+    <p>{{post.content}}</p>
+</div>
+{% endfor %}
+{% else %}
+<p>No Posts yet.</p>
+
+{% endif %}
+
+{% endblock %}

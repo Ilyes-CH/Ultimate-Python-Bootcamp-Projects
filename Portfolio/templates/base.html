@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title if title else "My Portfolio"}}</title>
+    <link rel="stylesheet" href="{{url_for("static",filename="css/style.css")}}">
+</head>
+<body>
+    
+    <!-- Nav Bar -->
+    <nav>
+        <div class="container-nav">
+            <a href="{{url_for("home")}}" class="logo">{{title if title else "My Portfolio"}}</a>
+            <ul class="nav-links">
+                <li><a href="{{url_for("home")}}">Home</a></li>
+                <li><a href="{{url_for("resume")}}">Resume</a></li>
+                <li><a href="{{url_for('contact')}}">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main class="container">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <div class="flash-messages">
+            {% for category, message in messages %}
+            <div class="flash {{category}}">{{message}}</div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% endwith %}
+        {% block content %}
+        {% endblock  %}
+    </main>
+<!-- Footer -->
+    <footer>
+        <p>© 2025 MyPortfolio. All rights reserved.</p>
+    </footer>
+</body>
+</html>

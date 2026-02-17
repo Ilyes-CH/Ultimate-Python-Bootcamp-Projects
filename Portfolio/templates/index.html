@@ -1,0 +1,255 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    .ban_sec {
+  width: 100%;
+}
+.ban_img {
+  width: 100%;
+  position: relative;
+}
+.ban_img img {
+  width: 100%;
+}
+.ban_text {
+  position: absolute;
+  top: 50%;
+  left: 6%;
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.ban_text strong {
+  font: 800 62.22px/70px "Montserrat", sans-serif;
+  color: #fff;
+  text-transform: uppercase;
+}
+.ban_text strong span {
+  font: 400 44.44px/52px "Montserrat", sans-serif;
+  letter-spacing: 3px;
+}
+.ban_text p {
+  font: 400 25px/30px "Montserrat", sans-serif;
+  color: #fff;
+  margin: 7px 0 25px;
+}
+.ban_text a {
+  display: inline-block;
+  font: 800 19.39px/24px "Montserrat", sans-serif;
+  background: #282828;
+  border-radius: 26px;
+  color: #fff;
+  padding: 12px 28px;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  text-decoration:none;
+}
+.ban_text a:hover {
+  background: #50af47;
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .ban_text p {
+    font-size: 21px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .ban_text p {
+    font-size: 17px;
+  }
+  .ban_text strong {
+    font-size: 50px;
+    line-height: 60px;
+  }
+  .ban_text strong span {
+    font-size: 37px;
+  }
+  .ban_text a {
+    font-size: 16px;
+    line-height: 19px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .ban_text strong {
+    font-size: 35px;
+    line-height: 40px;
+  }
+  .ban_text strong span {
+    font-size: 28px;
+    line-height: 35px;
+    letter-spacing: 2px;
+  }
+  .ban_text p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .ban_text a {
+    font-size: 13.39px;
+    line-height: 15px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .ban_img img {
+    min-height: 290px;
+    object-fit: cover;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .ban_text strong {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    width: 100%;
+    display: block;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .ban_text strong span {
+    font-size: 22px;
+    line-height: 31px;
+    letter-spacing: 1px;
+  }
+  .ban_text {
+    left: 2%;
+  }
+}
+
+
+    .title-container {
+        margin-top: 10px;
+        background-color: rgb(66, 65, 65);
+        padding: 30px;
+        font-size: x-large;
+        box-shadow: 5px 5px 20px rgb(19, 19, 19);
+    }
+
+    .para-container {
+        margin-top: 4px;
+        background-color: rgb(129, 127, 127);
+        padding: 40px;
+        text-align: center;
+    }
+
+
+    button {
+        cursor: pointer;
+        width: 170px;
+        height: 75px;
+        border: none;
+        font-weight: bold;
+        font-size: large;
+        background-color: rgb(51, 51, 51);
+        transition: background-color 0.3s;
+
+    }
+
+    button:hover {
+        background-color: rgb(136, 136, 136);
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+
+    p {
+        color: white;
+        font-weight: 700;
+    }
+
+    /* Optional: make banner full width */
+    .ban_sec {
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        padding: 0;
+    }
+
+    .ban_img img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .ban_text {
+        position: absolute;
+        top: 50%;
+        left: 10%;
+        color: white;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    }
+
+   .btn-container {
+  display: flex;
+  flex-direction: column;   /* stack items vertically */
+  justify-content: center;  /* center vertically */
+  align-items: center;      /* center horizontally */
+  gap: 20px;
+  padding: 70px;
+  background-color: rgb(202, 201, 200);
+}
+.inner-btn-container{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+#explore {
+  font-size: 2rem;
+  margin-bottom: 20px; /* add space below the text */
+}
+img {
+  filter: brightness(60%) contrast(80%) saturate(60%);
+}
+.container {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+
+</style>
+<section class="ban_sec">
+		<div class="container">
+			<div class="ban_img">
+	<img src="{{url_for("static",filename="images/dev.jpg")}}" alt="banner" border="0">
+				<div class="ban_text">
+					<strong>
+						<span>Meeting current</span><br> needs now
+					</strong>
+					<p>You can prioritize a child’s mental, emotional, <br>
+						behavioral, and physical health </p>
+					<a href="#">Lend a hand</a>
+				</div>
+			</div>
+		</div>
+	</section>
+<div class="title-container">
+
+
+    <h1 style="color: white;">WELCOME TO MY <span style="color:black ;"> PORTFOLIO</span></h1>
+</div>
+<div class="para-container">
+    <p>
+        Hello! I’m a software developer passionate about building clean, efficient,
+        and scalable web applications.
+    </p>
+    <p>Explore my resume or get in touch via the contact page.</p>
+
+</div>
+<div class="btn-container">
+    <h1 id="explore">EXPLORE</h1>
+    <div class="inner-btn-container">
+
+        <button id="resume"><a id="anchor-resume" href="{{url_for('resume')}}">Resume</a></button>
+        <button id="contact"><a id="anchor-contact" href="{{url_for('contact')}}">Contact</a></button>
+    </div>
+</div>
+{% endblock %}

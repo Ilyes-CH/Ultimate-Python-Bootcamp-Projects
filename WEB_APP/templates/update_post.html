@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Update Post</h1>
+{% if error %} <p style="color:red;">{{error}}</p> {% endif %}
+<form action="" method="POST">
+
+    <input type="hidden" name="_method" value="PUT">
+
+    <label for="id">Post ID:</label>
+    <input type="number" name="id" id="id" required> <br><br>
+
+     <label for="New Content">New Content:</label>
+    <textarea  name="new_content"  rows="5" cols="30" required></textarea> <br><br>
+
+    <button type="submit">Update Post</button>
+
+</form>
+<a href="{{url_for("home")}}">Back to Home</a>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Remove a Post</h1>
+    {% if error %}<p style="color:red;">{{ error }}</p>{% endif %}
+    <form method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+
+        <label>Post ID:</label>
+        <input type="number" name="id" required><br><br>
+
+        <button type="submit">Remove Post</button>
+    </form>
+    <a href="{{ url_for('home') }}">Back to Home</a>
+{% endblock  %}
+    
