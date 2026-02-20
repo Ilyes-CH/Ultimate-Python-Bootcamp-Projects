@@ -18,11 +18,11 @@ This project is a web application designed to generate images based on audio inp
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/yourproject.git
+    git clone https://github.com/Ilyes-CH/Ultimate-Python-Bootcamp-Projects/tree/main/Final_BOSS
     ```
 2. Navigate to the project directory:
     ```bash
-    cd yourproject
+    cd Final_BOSS
     ```
 
 ## Usage
